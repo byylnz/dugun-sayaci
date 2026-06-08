@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eren & Melis | Düğün Geri Sayımı</title>
+  <meta name="description" content="Eren & Melis düğün geri sayım sayfası - 27 Eylül 2026" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1: #fff7f1;
+      --bg2: #f9e2da;
+      --rose: #b76e79;
+      --rose-dark: #7b3d49;
+      --gold: #c79a43;
+      --text: #2b2024;
+      --muted: #7b6770;
+      --glass: rgba(255,255,255,.72);
+      --border: rgba(183,110,121,.22);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 32%),
+        radial-gradient(circle at 80% 10%, rgba(199,154,67,.18), transparent 28%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      overflow-x: hidden;
+    }
+
+    .petal {
+      position: fixed;
+      width: 13px;
+      height: 18px;
+      background: rgba(183,110,121,.28);
+      border-radius: 70% 0 70% 0;
+      top: -30px;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 2;
+      width: min(1120px, 92vw);
+      min-height: 100vh;
+      margin: auto;
+      display: grid;
+      place-items: center;
+      padding: 40px 0;
+    }
+
+    .card {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      background: var(--glass);
+      box-shadow: 0 25px 80px rgba(123,61,73,.17);
+      backdrop-filter: blur(18px);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+    }
+
+    .hero {
+      padding: 64px 56px;
+      position: relative;
+    }
+
+    .eyebrow {
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(64px, 10vw, 118px);
+      line-height: .9;
+      margin: 0;
+      color: var(--rose-dark);
+      font-weight: 400;
+    }
+
+    .subtitle {
+      margin-top: 22px;
+      font-size: clamp(19px, 2.4vw, 28px);
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .date {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.66);
+      border: 1px solid var(--border);
+      color: var(--rose-dark);
+      font-weight: 800;
+    }
+
+    .message {
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+      max-width: 570px;
+    }
+
+    .divider {
+      width: 86px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--rose));
+      border-radius: 999px;
+      margin-top: 30px;
+    }
+
+    .panel {
+      padding: 54px 42px;
+      background: linear-gradient(160deg, rgba(123,61,73,.95), rgba(183,110,121,.88));
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel::before {
+      content: '';
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle, rgba(255,255,255,.2), transparent 35%);
+      transform: rotate(12deg);
+    }
+
+    .panel-inner { position: relative; z-index: 2; }
+
+    .panel-title {
+      font-size: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.78);
+      font-weight: 800;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .box {
+      padding: 24px 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.2);
+      text-align: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+    }
+
+    .num {
+      display: block;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .label {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.78);
+      font-weight: 700;
+    }
+
+    .final-note {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 15px;
+      color: rgba(255,255,255,.82);
+      line-height: 1.7;
+    }
+
+    .btns {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      color: white;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 800;
+      font-size: 14px;
+      background: rgba(255,255,255,.12);
+    }
+
+    .names-small {
+      position: absolute;
+      right: 30px;
+      bottom: 24px;
+      color: rgba(123,61,73,.12);
+      font-family: 'Great Vibes', cursive;
+      font-size: 84px;
+      pointer-events: none;
+    }
+
+    @media (max-width: 840px) {
+      .card { grid-template-columns: 1fr; }
+      .hero { padding: 48px 28px; text-align: center; }
+      .message { margin-left: auto; margin-right: auto; }
+      .divider { margin-left: auto; margin-right: auto; }
+      .panel { padding: 42px 22px; }
+      .names-small { display: none; }
+    }
+
+    @media (max-width: 460px) {
+      .countdown { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .box { padding: 18px 8px; border-radius: 18px; }
+      .num { font-size: 38px; }
+      .label { font-size: 11px; }
+      .date { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="petals"></div>
+
+  <main class="wrap">
+    <section class="card" aria-label="Düğün geri sayım sayfası">
+      <div class="hero">
+        <div class="eyebrow">Düğünümüze Davetlisiniz</div>
+        <h1>Eren & Melis</h1>
+        <div class="subtitle">Sonsuzluğa bir adım daha...</div>
+        <div class="date">💍 27 Eylül 2026</div>
+        <p class="message">
+          Bu özel günümüzde mutluluğumuzu sevdiklerimizle paylaşmak istiyoruz.
+          Aşkımızın en güzel anına sayılı günler kala, geri sayım başladı.
+        </p>
+        <div class="divider"></div>
+        <div class="names-small">E & M</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-inner">
+          <div class="panel-title">Düğüne Kalan Süre</div>
+          <div class="countdown">
+            <div class="box"><span class="num" id="days">00</span><span class="label">Gün</span></div>
+            <div class="box"><span class="num" id="hours">00</span><span class="label">Saat</span></div>
+            <div class="box"><span class="num" id="minutes">00</span><span class="label">Dakika</span></div>
+            <div class="box"><span class="num" id="seconds">00</span><span class="label">Saniye</span></div>
+          </div>
+          <p class="final-note" id="finalNote">
+            27 Eylül 2026 Pazar günü için geri sayım devam ediyor.
+          </p>
+          <div class="btns">
+            <a class="btn" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Eren%20%26%20Melis%20D%C3%BC%C4%9F%C3%BCn%C3%BC&dates=20260927T160000Z/20260927T210000Z&details=Eren%20ve%20Melis%27in%20d%C3%BC%C4%9F%C3%BCn%C3%BC" target="_blank" rel="noopener">Takvime Ekle</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const targetDate = new Date('2026-09-27T20:00:00+03:00').getTime();
+
+    function pad(num) {
+      return String(num).padStart(2, '0');
+    }
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        document.getElementById('finalNote').textContent = 'Bugün Eren & Melis’in en özel günü. Mutluluklar!';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = pad(hours);
+      document.getElementById('minutes').textContent = pad(minutes);
+      document.getElementById('seconds').textContent = pad(seconds);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const petalsContainer = document.getElementById('petals');
+    for (let i = 0; i < 18; i++) {
+      const petal = document.createElement('span');
+      petal.className = 'petal';
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (7 + Math.random() * 8) + 's';
+      petal.style.animationDelay = (Math.random() * 7) + 's';
+      petal.style.opacity = .35 + Math.random() * .45;
+      petalsContainer.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
